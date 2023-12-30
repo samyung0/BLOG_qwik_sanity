@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import Layout from "~/components/Layout";
-import { authors } from "../../../util/sanity";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Image } from "@unpic/qwik";
+import { useAuthors } from "~/routes/layout";
 
 export const head: DocumentHead = {
   title: "About me",
@@ -29,6 +29,7 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
+  const authors = useAuthors().value;
   const author = authors.find((author) => author.slug === "sam-yung");
   return (
     <Layout noPaddingTop>

@@ -5,9 +5,11 @@ import Prose from "~/components/Prose";
 import RelatedPosts from "~/components/RelatedPosts";
 import Tags from "~/components/Tags";
 import ReactPortableText from "~/integrations/react/ReactPortableText";
-import { posts } from "../../../../util/sanity";
+import { getPosts } from "../../../../util/sanity";
+import { usePosts } from "~/routes/layout";
 
 export const onStaticGenerate: StaticGenerateHandler = async () => {
+  const posts = await getPosts();
   return {
     params: posts.map((post) => {
       return { post: post.slug };
@@ -15,7 +17,8 @@ export const onStaticGenerate: StaticGenerateHandler = async () => {
   };
 };
 
-export const head: DocumentHead = ({ params }) => {
+export const head: DocumentHead = ({ params, resolveValue }) => {
+  const posts = resolveValue(usePosts);
   const post = posts.find((post) => post.slug === params.post)!;
   return {
     title: post.name,
@@ -44,6 +47,7 @@ export const head: DocumentHead = ({ params }) => {
 
 export default component$(() => {
   const routeParam = useLocation().params;
+  const posts = usePosts().value;
   const post = posts.find((post) => post.slug === routeParam.post)!;
   return (
     <Layout>

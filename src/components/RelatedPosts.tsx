@@ -2,11 +2,12 @@ import { component$ } from "@builder.io/qwik";
 import { Image } from "@unpic/qwik";
 import PostPreview from "~/components/PostPreview";
 import type { Post } from "../../types/sanity";
-import { posts } from "../../util/sanity";
 import RelatedPostSVG from "../media/document-outline.svg";
 import RelatedPostsSVG from "../media/documents-outline.svg";
+import { usePosts } from "~/routes/layout";
 
 export default component$(({ post }: { post?: Post["relatedPosts"] }) => {
+  const posts = usePosts().value;
   const relatedPosts =
     post && posts.filter((relatedPost) => post.find((slug) => slug === relatedPost.slug));
   return relatedPosts ? (

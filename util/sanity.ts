@@ -2,7 +2,7 @@ import type {Author, Post, Tag} from '../types/sanity'
 // import groq from 'groq'
 import {SANITY_PROD_URL} from '../const'
 
-export const posts = (await fetch(
+export const getPosts = async () => (await fetch(
   SANITY_PROD_URL +
     `*[_type == "post"] | order(publishedAt desc) {
     _id,
@@ -35,7 +35,7 @@ export const posts = (await fetch(
   }`
 ).then((data) => data.json())).result as Post[]
 
-export const authors = (await fetch(
+export const getAuthors = async () => (await fetch(
   SANITY_PROD_URL +
     `
       *[_type == "author"] {
@@ -51,7 +51,7 @@ export const authors = (await fetch(
     `
 ).then((data) => data.json())).result as Author[]
 
-export const tags = (await fetch(
+export const getTags = async () => (await fetch(
   SANITY_PROD_URL +
     `
       *[_type == "tag"] {

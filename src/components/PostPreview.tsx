@@ -1,13 +1,14 @@
 import { component$ } from "@builder.io/qwik";
 import sanityImage from "../../util/sanityImage";
-import { posts } from "../../util/sanity";
 import type { Post } from "../../types/sanity";
 import { Image } from "@unpic/qwik";
+import { usePosts } from "~/routes/layout";
 
 export default component$(({tag, relatedPosts}: {
   tag?: string;
   relatedPosts?: Post["relatedPosts"];
 }) => {
+  const posts = usePosts().value;
   return (
     <article>
   

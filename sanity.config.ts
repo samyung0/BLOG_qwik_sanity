@@ -23,7 +23,7 @@ export default defineConfig({
     media(),
   ],
   document: {
-    actions: (prev, context) =>{
+    actions: (prev) =>{
       return prev.map((originalAction) => (originalAction.action === 'publish' ? SetAndPublishAction : originalAction)) as any}
   },
 

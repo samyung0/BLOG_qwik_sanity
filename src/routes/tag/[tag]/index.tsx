@@ -3,9 +3,11 @@ import { useLocation, type DocumentHead, type StaticGenerateHandler } from "@bui
 import Layout from "~/components/Layout";
 import PostPreview from "~/components/PostPreview";
 import Tags from "~/components/Tags";
-import { tags } from "../../../../util/sanity";
+import { getTags } from "../../../../util/sanity";
+import { useTags } from "~/routes/layout";
 
 export const onStaticGenerate: StaticGenerateHandler = async () => {
+  const tags = await getTags();
   return {
     params: tags.map((tag) => {
       return { tag: tag.slug };
@@ -13,7 +15,8 @@ export const onStaticGenerate: StaticGenerateHandler = async () => {
   };
 };
 
-export const head: DocumentHead = ({ params }) => {
+export const head: DocumentHead = ({ params, resolveValue }) => {
+  const tags = resolveValue(useTags);
   const tagName = tags.find((tag2) => tag2.slug === params.tag)!;
   return {
     title: tagName.name,
@@ -41,6 +44,7 @@ export const head: DocumentHead = ({ params }) => {
 };
 
 export default component$(() => {
+  const tags = useTags().value;
   const tag = useLocation().params.tag;
   const tagName = tags.find((tag2) => tag2.slug === tag)!;
   return (
