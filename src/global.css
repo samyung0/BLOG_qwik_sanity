@@ -1,49 +1,10 @@
 /**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
  */
-
-:root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151934;
-  --qwik-dark-text: #ffffff;
-}
-
-html {
-  line-height: 1;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  line-height: inherit;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /**
  * WHAT IS THIS FILE?
@@ -52,29 +13,106 @@ body {
  * the styles in here will be applied to the Document, without any sort of CSS scoping.
  *
  */
+
+ @font-face {
+  font-family: 'mosk';
+  src: url('/font/mosk/Mosk Normal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'mosk';
+  src: url('/font/mosk/Mosk Bold 700.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+/* @font-face {
+font-family: "Cascadia Code";
+src: url("/font/Cascadia Code/CascadiaCode.ttf") format("truetype");
+font-weight: normal;
+font-style: normal;
+font-display: swap;
+} */
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/font/Fira Code/FiraCode-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 html {
+  line-height: 1;
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background: #f7f7f7;
+  --foreground-rgb: #f7f7f7;
+  --background-start-rgb: #f7f7f7;
+  --background-end-rgb: #3e3e3e;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  direction: ltr;
 }
-
 body {
   padding: 0;
+  margin: 0;
   line-height: inherit;
+}
+
+pre > code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+pre > code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(115, 138, 148, 0.4);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(8px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes floatCollapse {
+  0% {
+    transform: translatey(2px) rotateZ(180deg);
+  }
+  50% {
+    transform: translatey(8px) rotateZ(180deg);
+  }
+  100% {
+    transform: translatey(2px) rotateZ(180deg);
+  }
+}
+.oversizedWrapper::before {
+  animation: float 6s ease-in-out infinite;
+}
+.oversizedCollapse::before {
+  animation: floatCollapse 6s ease-in-out infinite;
 }
