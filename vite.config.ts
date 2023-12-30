@@ -3,6 +3,8 @@ import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { qwikReact } from "@builder.io/qwik-react/vite";
+import { fileURLToPath } from 'node:url';
+
 export default defineConfig(() => {
     return {
         plugins: [qwikCity(), qwikVite(), tsconfigPaths(), qwikReact()
@@ -16,6 +18,13 @@ export default defineConfig(() => {
             headers: {
                 "Cache-Control": "public, max-age=600",
             },
-        }
+        },
+        build: {
+            target: 'esnext',
+            rollupOptions: {
+                external: []
+            }
+          },
+          
     };
 });

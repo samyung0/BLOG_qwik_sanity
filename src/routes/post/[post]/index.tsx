@@ -1,4 +1,4 @@
-import { component$, useTask$, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useVisibleTask$ } from "@builder.io/qwik";
 import { useLocation, type DocumentHead, type StaticGenerateHandler } from "@builder.io/qwik-city";
 import Layout from "~/components/Layout";
 import Prose from "~/components/Prose";
@@ -59,7 +59,7 @@ export default component$(() => {
           wrappers[i].addEventListener(
             'click',
             function () {
-              toggle(this)
+              toggle(wrappers[i] as HTMLElement)
             },
             {passive: true},
           )

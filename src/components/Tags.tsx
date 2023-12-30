@@ -21,7 +21,7 @@ for (const post of posts) {
       <>
         <h2 class="font-mosk text-primary-gray font-bold md:text-xl text-lg md:-mt-[2px] md:mb-0 mb-1 tracking-wide mr-12 leading-8">
           Tags{' '}
-          <Image src={LabelSVG} layout="fixed" alt="" class="md:h-6 md:w-6 w-5 h-5 inline-block md:mr-4 mr-2" />:
+          <Image width={24} height={24} src={LabelSVG} layout="fixed" alt="" class="md:h-6 md:w-6 w-5 h-5 inline-block md:mr-4 mr-2" />:
         </h2>
         <ul class="flex max-w-[800px] flex-wrap">
           {Object.values(tagsNotEmpty).map((tag) => (

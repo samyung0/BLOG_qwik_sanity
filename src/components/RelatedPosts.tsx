@@ -15,6 +15,8 @@ export default component$(({ post }: { post?: Post["relatedPosts"] }) => {
         <span class="pr-1">Related Post{relatedPosts.length > 0 ? "s" : ""}</span>
         {relatedPosts.length > 0 ? (
           <Image
+            height={24}
+            width={24}
             layout="fixed"
             src={RelatedPostsSVG}
             alt=""
@@ -22,6 +24,8 @@ export default component$(({ post }: { post?: Post["relatedPosts"] }) => {
           />
         ) : (
           <Image
+            height={24}
+            width={24}
             layout="fixed"
             src={RelatedPostSVG}
             alt=""

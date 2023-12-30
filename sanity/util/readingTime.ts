@@ -1,5 +1,6 @@
+/** @jsxImportSource react */
 import {useState, useEffect} from 'react'
-import {useDocumentOperation, useDocumentValues} from 'sanity'
+import {useDocumentOperation} from 'sanity'
 
 const rec = (content: number, children: any) => {
   for (const i of children) {

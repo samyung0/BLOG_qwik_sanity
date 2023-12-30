@@ -11,12 +11,12 @@ export default component$(() => {
     <ul class="flex gap-4">
       <li>
         <a href="mailto:yungchinpang999@gmail.com">
-          <Image layout="fixed" class={"w-6 h-6 invert"} src={MailOutline} alt="email" />
+          <Image layout="fixed" width={24} height={24} class={"w-6 h-6 invert"} src={MailOutline} alt="email" />
         </a>
       </li>
       <li>
         <a target="_blank" href="https://www.linkedin.com/in/sam-yung-14ba7b1a4/">
-          <Image layout="fixed" class={"w-6 h-6 invert"} src={LinkedIn} alt="linkedin" />
+          <Image layout="fixed" width={24} height={24} class={"w-6 h-6 invert"} src={LinkedIn} alt="linkedin" />
         </a>
       </li>
     </ul>
