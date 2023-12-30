@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import { qwikify$ } from "@builder.io/qwik-react";
-import { PortableText } from "@portabletext/react";
+import { PortableText, defaultComponents } from "@portabletext/react";
 import { Image } from "@unpic/react";
 import * as shiki from "shiki";
 import type { Post } from "../../../types/sanity";
@@ -13,6 +13,14 @@ const ReactPortableText = ({ post }: { post: Post }) => (
   <PortableText
     value={post.content}
     components={{
+      block: (props) => {
+        const HeadingTag = props.value.style! as any;
+
+        if (/^h\d/.test(HeadingTag)) {
+          return <HeadingTag id={props.value.children[0].text}>{props.children}</HeadingTag>;
+        }
+        return (defaultComponents.block as any)[HeadingTag](props);
+      },
       types: {
         image: (props) => {
           return (
@@ -40,14 +48,14 @@ const ReactPortableText = ({ post }: { post: Post }) => (
             bg: highlighter.getBackgroundColor("github-dark"),
             elements: {
               pre({ className, style, children }) {
-                return `<pre filename=${
-                  props.value.filename ? 1 : 0
-                } class="${className}" style="${style}" tabindex="0">${children}</pre>`;
+                return `<pre class="${className} ${props.value.filename ? "filename" : ""} ${
+                  props.value.language === "text" ? "textBlock" : ""
+                }" style="${style}" tabindex="0">${children}</pre>`;
               },
               line({ className, children, index }) {
-                return `<span markedlines=${
-                  (props.value.highlightedLines ?? []).includes(index + 1) ? "1" : "0"
-                } class="${className}">${children}</span>`;
+                return `<span class="${className} ${
+                  (props.value.highlightedLines ?? []).includes(index + 1) ? "highlight" : ""
+                }">${children}</span>`;
               },
             },
           });
