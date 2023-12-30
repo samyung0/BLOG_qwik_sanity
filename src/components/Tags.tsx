@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { Image } from '@unpic/qwik';
 import { posts, tags } from "../../util/sanity";
 import LabelSVG from "../media/pricetag-outline.svg"
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const tagsNotEmpty: Record<string, (typeof tags)['0']> = {}
@@ -26,7 +27,7 @@ for (const post of posts) {
         <ul class="flex max-w-[800px] flex-wrap">
           {Object.values(tagsNotEmpty).map((tag) => (
             <li key={tag.slug} class="text-primary-gray font-bold tracking-wide mr-4 leading-8 md:text-lg text-base">
-              <a href={`/tag/${tag.slug}`}>{tag.name}</a>
+              <Link prefetch href={`/tag/${tag.slug}`}>{tag.name}</Link>
             </li>
           ))}
         </ul>
