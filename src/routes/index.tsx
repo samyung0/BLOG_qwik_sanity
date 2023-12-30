@@ -37,7 +37,7 @@ export default component$(() => {
       <p class="max-w-5xl text-sm leading-6 tracking-normal text-primary-gray sm:text-base md:leading-7 md:tracking-wide md:text-black">
         Here are all my blog posts about my journey into web development. I write about all kinds of
         framework and libraries I have tried and give an honest opinion about them from the
-        perspective of a novice developer.
+        perspective of a novice developer, in simple terms.
       </p>
       <div class="pt-12 md:mx-[6vw] md:p-0 md:pt-[6vw] lg:mx-[5vw] xl:mx-auto xl:max-w-[1200px]">
         <PostPreview />
