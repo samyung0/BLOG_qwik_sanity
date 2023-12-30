@@ -4,7 +4,7 @@ import MailOutline from "../media/mail-outline.svg";
 import LinkedIn from "../media/logo-linkedin.svg";
 
 export default component$(() => {
-  const date = new Date().toDateString().slice(4);
+  const date = "Dec 29 2023";
   return (
     <footer class="py-[max(10vw,150px)] bg-primary-gray text-background-gray flex flex-col justify-center items-center">
   <div class="pb-6">

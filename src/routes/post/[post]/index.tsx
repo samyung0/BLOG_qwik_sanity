@@ -45,28 +45,6 @@ export const head: DocumentHead = ({ params }) => {
 export default component$(() => {
   const routeParam = useLocation().params;
   const post = posts.find((post) => post.slug === routeParam.post)!;
-  useVisibleTask$(() => {
-    if (window.innerWidth < 640) {
-      const wrappers = document.getElementsByClassName('wrapper')
-      const toggle = (el: HTMLElement) => {
-        el.classList.toggle('oversizedCollapse')
-        el.firstElementChild?.classList.toggle('hiddenPre')
-      }
-      for (let i = 0; i < wrappers.length; i++) {
-        if ((wrappers[i] as HTMLElement).offsetHeight > 100) {
-          wrappers[i].classList.add('oversizedWrapper')
-          wrappers[i].firstElementChild?.classList.toggle('hiddenPre')
-          wrappers[i].addEventListener(
-            'click',
-            function () {
-              toggle(wrappers[i] as HTMLElement)
-            },
-            {passive: true},
-          )
-        }
-      }
-    }
-  })
   return (
     <Layout>
       <h1 class="pb-4 font-mosk text-[2em] font-bold tracking-wider text-primary-gray lg:text-[3em] 2xl:text-[4em]">
