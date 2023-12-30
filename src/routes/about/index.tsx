@@ -23,7 +23,7 @@ export const head: DocumentHead = {
   links: [
     {
       rel: "canonical",
-      href: "https://blog.partialty.com/about/",
+      href: "https://blog-qwik.partialty.com/about/",
     },
   ],
 };

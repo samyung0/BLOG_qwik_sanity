@@ -12,7 +12,8 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: "https://yoursite.qwik.dev",
+        sitemapOutFile: "sitemap-index.xml",
+        origin: "https://blog-qwik.partialty.com",
       }),
     ],
   };

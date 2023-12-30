@@ -3,7 +3,6 @@ import sanityImage from "../../util/sanityImage";
 import { posts } from "../../util/sanity";
 import type { Post } from "../../types/sanity";
 import { Image } from "@unpic/qwik";
-import { Link } from "@builder.io/qwik-city";
 
 export default component$(({tag, relatedPosts}: {
   tag?: string;
@@ -21,7 +20,7 @@ export default component$(({tag, relatedPosts}: {
             <li key={post.slug}>
               <div class="text-center">
                 {post.thumbnail.asset.url && (
-                  <Link prefetch class="inline-block" href={`/post/${post.slug}`}>
+                  <a class="inline-block" href={`/post/${post.slug}`}>
                     <Image
                       // background={post.thumbnail.asset.metadata.lqip}
                       class="h-[200px] w-full object-contain object-bottom"
@@ -30,7 +29,7 @@ export default component$(({tag, relatedPosts}: {
                       width={post.thumbnail.asset.metadata.dimensions.width}
                       height={post.thumbnail.asset.metadata.dimensions.height}
                     />
-                  </Link>
+                  </a>
                 )}
               </div>
               <div>

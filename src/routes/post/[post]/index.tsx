@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { useLocation, type DocumentHead, type StaticGenerateHandler } from "@builder.io/qwik-city";
 import Layout from "~/components/Layout";
 import Prose from "~/components/Prose";
@@ -36,7 +36,7 @@ export const head: DocumentHead = ({ params }) => {
     links: [
       {
         rel: "canonical",
-        href: "https://blog.partialty.com/post/" + post.slug,
+        href: "https://blog-qwik.partialty.com/post/" + post.slug,
       },
     ],
   };

@@ -34,7 +34,7 @@ export const head: DocumentHead = ({ params }) => {
     links: [
       {
         rel: "canonical",
-        href: "https://blog.partialty.com/tag/" + tagName.slug,
+        href: "https://blog-qwik.partialty.com/tag/" + tagName.slug,
       },
     ],
   };
