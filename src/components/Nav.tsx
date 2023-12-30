@@ -17,6 +17,7 @@ export default component$(() => {
       Blog
     </Link>
     <Link
+      prefetch
       class={'text-black relative tracking-wider [transition:all_0.5s_linear] py-4' +
         (pathname.startsWith('/about')
           ? ' text-opacity-100 font-[500] before:bg-black before:w-full before:h-[2px] before:absolute before:bottom-1 before:left-0'
