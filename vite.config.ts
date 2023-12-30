@@ -18,8 +18,12 @@ export default defineConfig(() => {
                 "Cache-Control": "public, max-age=600",
             },
         },
+        esbuild : {
+            supported: {
+                "top-level-await": true
+            }
+        },
         build: {
-            target: 'esnext',
             rollupOptions: {
                 external: []
             }
