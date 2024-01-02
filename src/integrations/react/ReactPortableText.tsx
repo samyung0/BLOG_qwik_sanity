@@ -24,7 +24,7 @@ const ReactPortableText = ({ post }: { post: Post }) => (
       types: {
         image: (props) => {
           return (
-            <figure className='flex justify-center flex-col items-center'>
+            <figure className="flex flex-col items-center justify-center">
               <Image
                 className="max-h-[400px] !object-contain"
                 // background={props.value.asset.metadata.lqip}
@@ -95,13 +95,29 @@ const ReactPortableText = ({ post }: { post: Post }) => (
       marks: {
         indent: (props) => {
           return (
-            <p style={{paddingInlineStart: props.value.indentLevel * 32 + 'px'}}>
-              <span>{props.children}</span>
-            </p>
-          )
+            <span
+              style={{
+                paddingInlineStart: props.value.indentLevel * 32 + "px",
+                display: "block",
+              }}
+            >
+              {props.children}
+            </span>
+          );
+        },
+        indent2: (props) => {
+          return (
+            <span
+              style={{
+                paddingInlineStart: props.value.indentLevel * 32 + "px",
+              }}
+            >
+              {props.children}
+            </span>
+          );
         },
         highlight: (props) => {
-          return <span style={{backgroundColor: 'tomato'}}>{props.children}</span>
+          return <span style={{ backgroundColor: "tomato" }}>{props.children}</span>;
         },
         code: (props) => {
           return <code className="inlineCode">{props.children}</code>;
