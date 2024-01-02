@@ -24,7 +24,7 @@ const ReactPortableText = ({ post }: { post: Post }) => (
       types: {
         image: (props) => {
           return (
-            <figure>
+            <figure className='flex justify-center flex-col'>
               <Image
                 className="max-h-[400px] !object-contain"
                 // background={props.value.asset.metadata.lqip}

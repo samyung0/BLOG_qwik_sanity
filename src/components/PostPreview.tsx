@@ -50,7 +50,7 @@ export default component$(({tag, relatedPosts}: {
                 </h3>
                 <div class="pt-1 flex items-center space-x-2">
                   <span class="text-primary-gray md:text-sm sm:text-xs text-[10px]">
-                    {post.readTime && Number(post.readTime) > 0 ? post.readTime : "1"} min read
+                    {post.readingTime && Number(post.readingTime) > 0 ? post.readingTime : "1"} min read
                   </span>
                 </div>
                 
