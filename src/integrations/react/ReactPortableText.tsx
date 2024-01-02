@@ -93,6 +93,16 @@ const ReactPortableText = ({ post }: { post: Post }) => (
         },
       },
       marks: {
+        indent: (props) => {
+          return (
+            <p style={{paddingInlineStart: props.value.indentLevel * 32 + 'px'}}>
+              <span>{props.children}</span>
+            </p>
+          )
+        },
+        highlight: (props) => {
+          return <span style={{backgroundColor: 'tomato'}}>{props.children}</span>
+        },
         code: (props) => {
           return <code className="inlineCode">{props.children}</code>;
         },
