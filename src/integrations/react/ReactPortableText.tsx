@@ -1,7 +1,6 @@
 /** @jsxImportSource react */
 import { qwikify$ } from "@builder.io/qwik-react";
 import { PortableText, defaultComponents } from "@portabletext/react";
-import { Image } from "@unpic/react";
 import * as shiki from "shiki";
 import type { Post } from "../../../types/sanity";
 import ReactPlayer from "./ReactPlayer";
@@ -25,10 +24,16 @@ const ReactPortableText = ({ post }: { post: Post }) => (
         image: (props) => {
           return (
             <figure className="flex flex-col items-center justify-center">
-              <Image
-                className="max-h-[400px] !object-contain"
-                // background={props.value.asset.metadata.lqip}
-                layout="fixed"
+              <img
+                style={{
+                  backgroundImage: `url(${props.value.asset.metadata.lqip})`,
+                  backgroundSize: "50%",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center"
+                }}
+                decoding="async"
+                loading="lazy"
+                className="max-h-[400px] object-contain"
                 src={props.value.asset.url}
                 alt=""
                 width={props.value.asset.metadata.dimensions.width}
