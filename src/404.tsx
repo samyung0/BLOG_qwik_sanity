@@ -26,7 +26,7 @@ export default component$(() => {
       <h1 class="text-center font-mosk text-[4em] font-bold tracking-wider text-primary-gray md:text-[6em]">
         404
       </h1>
-      <p class="mx-auto block max-w-5xl text-center text-sm leading-6 tracking-wide sm:text-base md:leading-7">
+      <p class="mx-auto block max-w-5xl text-center text-sm leading-7 tracking-wide sm:text-base md:leading-7">
         The page you are looking for does not exist.
       </p>
     </Layout>

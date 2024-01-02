@@ -34,7 +34,7 @@ export default component$(() => {
       <h1 class="pb-4 font-mosk text-[4em] font-bold tracking-wider text-primary-gray md:text-[6em]">
         Blog.
       </h1>
-      <p class="max-w-5xl text-sm leading-6 tracking-normal text-primary-gray sm:text-base md:leading-7 md:tracking-wide md:text-black">
+      <p class="max-w-5xl text-sm leading-7 tracking-normal text-primary-gray sm:text-base md:leading-7 md:tracking-wide md:text-black">
         Here are all my blog posts about my journey into web development. I write about all kinds of
         framework and libraries I have tried and give an honest opinion about them from the
         perspective of a novice developer, in simple terms.

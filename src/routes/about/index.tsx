@@ -50,7 +50,7 @@ export default component$(() => {
           <h1 class="pb-3 pt-8 font-gilroy text-[2em] font-bold text-primary-gray md:pb-6 md:pt-12">
             {author.name}
           </h1>
-          <p class="text-center text-sm leading-6 tracking-normal text-primary-gray sm:mx-6 sm:text-base md:mx-[10vw] md:leading-7 md:tracking-wide md:text-black xl:mx-0 xl:text-left">
+          <p class="text-center text-sm leading-7 tracking-normal text-primary-gray sm:mx-6 sm:text-base md:mx-[10vw] md:leading-7 md:tracking-wide md:text-black xl:mx-0 xl:text-left">
             {author.bio}
           </p>
         </div>

@@ -4,7 +4,7 @@ export default component$(() => {
   return (
     <div
       class="textBlock:sm:leading-[20px] textBlock:leading-[16px] prose prose-zinc mx-auto
-  max-w-full text-sm leading-6 tracking-wide prose-figcaption:text-center
+  max-w-full text-sm leading-7 tracking-wide prose-figcaption:text-center
   prose-code:text-xs
   prose-code:!leading-[unset] prose-code:tracking-tight
   prose-code:before:content-[] prose-code:after:content-[] prose-pre:m-0 prose-pre:px-0 lines:px-[1em]

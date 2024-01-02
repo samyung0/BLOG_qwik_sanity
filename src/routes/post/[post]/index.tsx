@@ -54,9 +54,9 @@ export default component$(() => {
       <h1 class="pb-4 font-mosk text-[2em] font-bold tracking-wider text-primary-gray lg:text-[3em] 2xl:text-[4em]">
         {post.name}
       </h1>
-      <div class="pt-12 leading-6 md:mx-[6vw] md:p-0 md:pt-[6vw] md:leading-8 md:tracking-wide lg:mx-[5vw] xl:mx-auto xl:max-w-[1200px]">
+      <div class="pt-12 md:mx-[6vw] md:p-0 md:pt-[6vw] md:leading-8 md:tracking-wide lg:mx-[5vw] xl:mx-auto xl:max-w-[1200px]">
         <Prose>
-          <p class="leading-6 tracking-wide text-primary-gray md:text-right md:leading-7 ">
+          <p class="leading-7 tracking-wide text-primary-gray md:text-right md:leading-7 ">
             {new Date(post._createdAt).toDateString().slice(4)}
           </p>
           <ReactPortableText post={post} />
